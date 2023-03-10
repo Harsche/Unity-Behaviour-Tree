@@ -1,20 +1,20 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace BehaviourTree{
-    [CreateAssetMenu(menuName = "Behaviour Tree/Leaf Nodes/Debug Node", fileName = "Debug Node", order = 0)]
     public class DebugNode : LeafNode{
+        [SerializeField] private string message;
+
         protected override void OnStart(){
-            Debug.Log("START");
+            Debug.Log($"START: {message}");
         }
 
         protected override Status OnUpdate(){
-            Debug.Log("UPDATE");
+            Debug.Log($"UPDATE: {message}");
             return Status = Status.Success;
         }
 
         protected override void OnStop(){
-            Debug.Log("STOP");
+            Debug.Log($"STOP: {message}");
         }
     }
 }

@@ -4,6 +4,8 @@ using UnityEngine.UIElements;
 
 namespace BehaviourTree{
     public class BehaviourTreeEditor : EditorWindow{
+        [SerializeField] private VisualTreeAsset visualTreeAsset;
+        [SerializeField] private StyleSheet styleSheetAsset;
         private BehaviourTreeView behaviourTreeView;
         private InspectorView inspectorView;
 
@@ -12,14 +14,12 @@ namespace BehaviourTree{
             VisualElement root = rootVisualElement;
 
             // Import UXML
-            var visualTree = AssetDatabase.LoadAssetAtPath<VisualTreeAsset>(
-                "Assets/Harsche Inter-6 develop Assets-_Game_Scripts_Features_IA/Editor/BehaviourTreeEditor.uxml");
+            VisualTreeAsset visualTree = visualTreeAsset;
             visualTree.CloneTree(root);
 
             // A stylesheet can be added to a VisualElement.
             // The style will be applied to the VisualElement and all of its children.
-            var styleSheet = AssetDatabase.LoadAssetAtPath<StyleSheet>(
-                "Assets/Harsche Inter-6 develop Assets-_Game_Scripts_Features_IA/Editor/BehaviourTreeEditor.uss");
+            StyleSheet styleSheet = styleSheetAsset;
             root.styleSheets.Add(styleSheet);
 
             behaviourTreeView = root.Q<BehaviourTreeView>();

@@ -1,8 +1,6 @@
 ﻿using System;
-using UnityEngine;
 
 namespace BehaviourTree{
-    [CreateAssetMenu(menuName = "Behaviour Tree/Composite Nodes/Sequence Node", fileName = "Sequence Node", order = 0)]
     public class SequenceNode : CompositeNode{
         protected override void OnStart(){ }
 
