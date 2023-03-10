@@ -1,4 +1,5 @@
 using UnityEditor;
+using UnityEditor.Callbacks;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -39,6 +40,13 @@ namespace BehaviourTree{
         public static void OpenWindow(){
             var wnd = GetWindow<BehaviourTreeEditor>();
             wnd.titleContent = new GUIContent("BehaviourTreeEditor");
+        }
+
+        [OnOpenAsset]
+        public static bool OnOpenAsset(int instanceId, int line){
+            if (Selection.activeObject is not BehaviourTree){ return false; }
+            OpenWindow();
+            return true;
         }
 
         private void OnNodeSelectionChanged(BehaviourTreeGraphNode behaviourTreeGraphNode){
