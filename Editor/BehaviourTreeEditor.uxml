@@ -1,0 +1,16 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
+    <Style src="project://database/Assets/Harsche%20Inter-6%20develop%20Assets-_Game_Scripts_Features_IA/Editor/BehaviourTreeEditor.uss?fileID=7433441132597879392&amp;guid=0d442508eca75114e8741b88e2534d41&amp;type=3#BehaviourTreeEditor" />
+    <uie:Toolbar>
+        <uie:ToolbarMenu display-tooltip-when-elided="true" text="Assets" />
+    </uie:Toolbar>
+    <BehaviourTree.SplitView fixed-pane-initial-dimension="300">
+        <ui:VisualElement name="left-panel">
+            <ui:Label text="Inspector" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
+            <BehaviourTree.InspectorView />
+        </ui:VisualElement>
+        <ui:VisualElement name="right-panel">
+            <ui:Label text="Tree View" display-tooltip-when-elided="true" style="background-color: rgb(37, 37, 37);" />
+            <BehaviourTree.BehaviourTreeView focusable="true" style="flex-grow: 1;" />
+        </ui:VisualElement>
+    </BehaviourTree.SplitView>
+</ui:UXML>
